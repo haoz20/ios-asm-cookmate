@@ -9,7 +9,7 @@ import SwiftUI
 import SwiftData
 
 struct RecipeDetailView: View {
-    @Bindable var recipe: Recipe
+    var recipe: Recipe
     @Environment(\.modelContext) private var modelContext
     var body: some View {
         ScrollView {
@@ -18,8 +18,7 @@ struct RecipeDetailView: View {
         .toolbar {
             ToolbarItem(placement: .topBarTrailing) {
                 Button {
-                    recipe.isFavorite.toggle()
-                    try? modelContext.save()
+                    
                 } label: {
                     Text(!recipe.isFavorite ? "Favorite" : "UnFavorite")
                 }

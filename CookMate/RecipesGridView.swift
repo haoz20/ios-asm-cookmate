@@ -16,19 +16,19 @@ struct RecipesGridView: View {
     ]
     
     var body: some View {
-        NavigationStack {
-            
-            LazyVGrid(columns: columns) {
-                ForEach(recipes, id: \.id) { recipe in
-                    NavigationLink(value: recipe) {
-                        RecipeCard(recipe: recipe)
-                    }
+        
+        
+        LazyVGrid(columns: columns) {
+            ForEach(recipes, id: \.id) { recipe in
+                NavigationLink(value: recipe) {
+                    RecipeCard(recipe: recipe)
                 }
             }
-            .navigationDestination(for: Recipe.self) { selectedRecipe in
-                RecipeDetailView(recipe: selectedRecipe)
-            }
         }
+        .navigationDestination(for: Recipe.self) { selectedRecipe in
+            RecipeDetailView(recipe: selectedRecipe)
+        }
+        
         
     }
     
