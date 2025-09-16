@@ -6,6 +6,11 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		44750AFE2E79B5B90011B7D4 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 44750AFD2E79B5B90011B7D4 /* SDWebImage */; };
+		44750B002E79B5B90011B7D4 /* SDWebImageMapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 44750AFF2E79B5B90011B7D4 /* SDWebImageMapKit */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		44957E882E79A2100005F261 /* CookMate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CookMate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -23,6 +28,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				44750B002E79B5B90011B7D4 /* SDWebImageMapKit in Frameworks */,
+				44750AFE2E79B5B90011B7D4 /* SDWebImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +72,8 @@
 			);
 			name = CookMate;
 			packageProductDependencies = (
+				44750AFD2E79B5B90011B7D4 /* SDWebImage */,
+				44750AFF2E79B5B90011B7D4 /* SDWebImageMapKit */,
 			);
 			productName = CookMate;
 			productReference = 44957E882E79A2100005F261 /* CookMate.app */;
@@ -94,6 +103,9 @@
 			);
 			mainGroup = 44957E7F2E79A2100005F261;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				44750AFC2E79B5B90011B7D4 /* XCRemoteSwiftPackageReference "SDWebImage" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 44957E892E79A2100005F261 /* Products */;
 			projectDirPath = "";
@@ -332,6 +344,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		44750AFC2E79B5B90011B7D4 /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImage";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.21.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		44750AFD2E79B5B90011B7D4 /* SDWebImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 44750AFC2E79B5B90011B7D4 /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImage;
+		};
+		44750AFF2E79B5B90011B7D4 /* SDWebImageMapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 44750AFC2E79B5B90011B7D4 /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImageMapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 44957E802E79A2100005F261 /* Project object */;
 }
