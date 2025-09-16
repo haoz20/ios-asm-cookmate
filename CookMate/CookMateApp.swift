@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SwiftData
 
 @main
 struct CookMateApp: App {
@@ -13,5 +14,6 @@ struct CookMateApp: App {
         WindowGroup {
             ContentView()
         }
+        .modelContainer(for: Recipe.self)
     }
 }

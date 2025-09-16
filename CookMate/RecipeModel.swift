@@ -3,7 +3,7 @@ import SwiftData
 
 @Model
 class Recipe {
-    var id: String
+    var id: Int
     var name: String
     var ingredients: [String]
     var instructions: [String]
@@ -37,7 +37,7 @@ class Recipe {
 }
 
 struct RecipeDTO: Codable, Identifiable {
-    let id: String
+    let id: Int
     let name: String
     let ingredients: [String]
     let instructions: [String]
