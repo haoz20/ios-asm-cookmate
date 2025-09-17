@@ -18,11 +18,9 @@ struct RecipesView: View {
                 RecipesGridView(recipes: recipes)
             }
             .scrollIndicators(.hidden)
-            .padding(.horizontal)
             .navigationTitle("Cook Mate")
-            .navigationDestination(for: Recipe.self) { selectedRecipe in
-                RecipeDetailView(recipe: selectedRecipe)
-            }
+            .navigationBarTitleDisplayMode(.automatic)
+            .background(AppGradientBackground())
             .toolbar{
                 ToolbarItem(placement: .topBarTrailing) {
                     NavigationLink {

@@ -18,7 +18,7 @@ struct RecipesGridView: View {
     var body: some View {
         LazyVGrid(columns: columns) {
             ForEach(recipes, id: \.id) { recipe in
-                NavigationLink(value: recipe) {
+                NavigationLink(destination: RecipeDetailView(recipe: recipe)) {
                     RecipeCard(recipe: recipe)
                 }
             }
