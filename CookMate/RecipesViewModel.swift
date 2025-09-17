@@ -19,10 +19,8 @@ class RecipesViewModel {
         do {
             let recipesDTOs = try await fetchRecipes()
             self.recipes = recipesDTOs.map{ Recipe(from: $0) }
-            print(recipesDTOs)
         } catch {
             recipes = []
-            print("There is an error")
         }
     }
     
@@ -32,7 +30,6 @@ class RecipesViewModel {
         }
         let (data, response) = try await URLSession.shared.data(from: baseUrl)
         guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {
-            print("error")
             throw URLError(.badServerResponse)
         }
         return try JSONDecoder().decode(RecipeResponse.self, from: data).recipes

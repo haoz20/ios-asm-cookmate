@@ -14,19 +14,24 @@ struct RecipesView: View {
     
     var body: some View {
         NavigationStack {
-            ScrollView(.vertical, showsIndicators: false) {
+            ScrollView(.vertical) {
                 RecipesGridView(recipes: recipes)
             }
+            .scrollIndicators(.hidden)
             .padding(.horizontal)
             .navigationTitle("Cook Mate")
+            .navigationDestination(for: Recipe.self) { selectedRecipe in
+                RecipeDetailView(recipe: selectedRecipe)
+            }
             .toolbar{
                 ToolbarItem(placement: .topBarTrailing) {
-                    Button {
-                        
+                    NavigationLink {
+                        FavoriteRecipesView()
                     } label: {
                         Image(systemName: "heart")
+                            .foregroundStyle(.red)
                     }
-                    .tint(.red)
+
                 }
             }
         }
